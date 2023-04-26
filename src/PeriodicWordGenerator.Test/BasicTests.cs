@@ -60,6 +60,26 @@ namespace PeriodicWordGenerator.Test
 			}
 		}
 
+		[TestMethod]
+		public void OneHundred()
+		{
+			var generator = new PeriodicWordLineGenerator();
+			var lines = generator.GetLines(100).ToArray();
+
+			for (int i = 14; i < 100; i+=15)
+			{
+				Assert.IsTrue(lines[i] == "RickyBobby");
+			}
+			for (int i = 2; i < 100; i += 3)
+			{
+				Assert.IsTrue(lines[i].Contains("Ricky"));
+			}
+			for (int i = 4; i < 100; i += 5)
+			{
+				Assert.IsTrue(lines[i].Contains("Bobby"));
+			}
+
+		}
 
 	}
 }
