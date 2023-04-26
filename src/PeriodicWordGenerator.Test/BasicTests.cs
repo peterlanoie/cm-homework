@@ -31,7 +31,7 @@ namespace PeriodicWordGenerator.Test
 		}
 
 		[TestMethod]
-		public void BaseIterationPass()
+		public void BaseIterationAsArray()
 		{
 			var generator = new PeriodicWordLineGenerator();
 			var results = generator.GetLines(15).ToArray();
@@ -40,6 +40,26 @@ namespace PeriodicWordGenerator.Test
 				Assert.AreEqual(pair.Item2, results[pair.Item1 - 1]);
 			}
 		}
+
+		[TestMethod]
+		public void BaseIterationAsEnumerable()
+		{
+			var generator = new PeriodicWordLineGenerator();
+			var list = generator.GetLines(int.MaxValue);
+
+			int i = 0, max = 15;
+			foreach (var line in list)
+			{
+				var pair = BASE_ITERATION_SET[i];
+				Assert.AreEqual(pair.Item2, line);
+				i++;
+				if (i == max)
+				{
+					break;
+				}
+			}
+		}
+
 
 	}
 }
