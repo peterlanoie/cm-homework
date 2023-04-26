@@ -12,21 +12,21 @@ namespace PeriodicWordGenerator.Test
 		public static void Setup(TestContext context)
 		{
 			BASE_ITERATION_SET = new Tuple<int, string>[]{
-				new Tuple<int, string>(0, "1"),
-				new Tuple<int, string>(1, "2"),
-				new Tuple<int, string>(2, "Ricky"),
-				new Tuple<int, string>(3, "4"),
-				new Tuple<int, string>(4, "Bobby"),
-				new Tuple<int, string>(5, "Ricky"),
-				new Tuple<int, string>(6, "7"),
-				new Tuple<int, string>(7, "8"),
-				new Tuple<int, string>(8, "Ricky"),
-				new Tuple<int, string>(9, "Bobby"),
-				new Tuple<int, string>(10, "11"),
-				new Tuple<int, string>(11, "Ricky"),
-				new Tuple<int, string>(12, "13"),
-				new Tuple<int, string>(13, "14"),
-				new Tuple<int, string>(14, "RickyBobby"),
+				new Tuple<int, string>(1, "1"),
+				new Tuple<int, string>(2, "2"),
+				new Tuple<int, string>(3, "Ricky"),
+				new Tuple<int, string>(4, "4"),
+				new Tuple<int, string>(5, "Bobby"),
+				new Tuple<int, string>(6, "Ricky"),
+				new Tuple<int, string>(7, "7"),
+				new Tuple<int, string>(8, "8"),
+				new Tuple<int, string>(9, "Ricky"),
+				new Tuple<int, string>(10, "Bobby"),
+				new Tuple<int, string>(11, "11"),
+				new Tuple<int, string>(12, "Ricky"),
+				new Tuple<int, string>(13, "13"),
+				new Tuple<int, string>(14, "14"),
+				new Tuple<int, string>(15, "RickyBobby"),
 			};
 		}
 
@@ -37,7 +37,7 @@ namespace PeriodicWordGenerator.Test
 			var results = generator.GetLines(15).ToArray();
 			foreach (var pair in BASE_ITERATION_SET)
 			{
-				Assert.AreEqual(pair.Item2, results[pair.Item1]);
+				Assert.AreEqual(pair.Item2, results[pair.Item1 - 1]);
 			}
 		}
 
