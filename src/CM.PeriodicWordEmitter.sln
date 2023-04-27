@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeriodicWords.CLI", "PeriodicWords.CLI\PeriodicWords.CLI.csproj", "{0C607C03-BB7E-4E56-BB50-654B0B2256C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CM.PeriodicWordEmitter.CLI", "CM.PeriodicWordEmitter.CLI\CM.PeriodicWordEmitter.CLI.csproj", "{0C607C03-BB7E-4E56-BB50-654B0B2256C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeriodicWordGenerator", "PeriodicWordGenerator\PeriodicWordGenerator.csproj", "{281C5BF3-733D-4AAE-BE26-21484004A1BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CM.PeriodicWordEmitter", "CM.PeriodicWordEmitter\CM.PeriodicWordEmitter.csproj", "{281C5BF3-733D-4AAE-BE26-21484004A1BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeriodicWordGenerator.Test", "PeriodicWordGenerator.Test\PeriodicWordGenerator.Test.csproj", "{6944284D-D5A6-4A35-910A-3327081C71F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM.PeriodicWordEmitter.Test", "CM.PeriodicWordEmitter.Test\CM.PeriodicWordEmitter.Test.csproj", "{6944284D-D5A6-4A35-910A-3327081C71F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

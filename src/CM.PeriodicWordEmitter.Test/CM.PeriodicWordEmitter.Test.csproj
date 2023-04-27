@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PeriodicWordGenerator\PeriodicWordGenerator.csproj" />
+    <ProjectReference Include="..\CM.PeriodicWordEmitter\CM.PeriodicWordEmitter.csproj" />
   </ItemGroup>
 
 </Project>
