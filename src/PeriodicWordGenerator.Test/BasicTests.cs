@@ -31,10 +31,35 @@ namespace PeriodicWordGenerator.Test
 		}
 
 		[TestMethod]
+		public void CreatedPeriodicPair()
+		{
+			var pair = new PeriodicPair(9, "Test");
+			Assert.IsNotNull(pair);
+			Assert.AreEqual(9, pair.RepeatsAt);
+			Assert.AreEqual("Test", pair.Word);
+		}
+
+		[TestMethod]
+		public void NoPairs()
+		{
+			var generator = new PeriodicWordLineGenerator();
+			var results = generator.GetLines(100).ToArray();
+			for (int i = 0; i < 100; i++)
+			{
+				Assert.AreEqual((i + 1).ToString(), results[i]);
+			}
+		}
+
+		[TestMethod]
 		public void BaseIterationAsArray()
 		{
 			var generator = new PeriodicWordLineGenerator();
-			var results = generator.GetLines(15).ToArray();
+			PeriodicPair[] pairs = new PeriodicPair[2]
+			{
+				new PeriodicPair(3, "Ricky"),
+				new PeriodicPair(5, "Bobby")
+			};
+			var results = generator.GetLines(15, pairs).ToArray();
 			foreach (var pair in BASE_ITERATION_SET)
 			{
 				Assert.AreEqual(pair.Item2, results[pair.Item1 - 1]);
@@ -45,7 +70,12 @@ namespace PeriodicWordGenerator.Test
 		public void BaseIterationAsEnumerable()
 		{
 			var generator = new PeriodicWordLineGenerator();
-			var list = generator.GetLines(int.MaxValue);
+			PeriodicPair[] pairs = new PeriodicPair[2]
+			{
+				new PeriodicPair(3, "Ricky"),
+				new PeriodicPair(5, "Bobby")
+			};
+			var list = generator.GetLines(int.MaxValue, pairs);
 
 			int i = 0, max = 15;
 			foreach (var line in list)
@@ -61,24 +91,29 @@ namespace PeriodicWordGenerator.Test
 		}
 
 		[TestMethod]
-		public void OneHundred()
+		public void LargeTestSet()
 		{
+			var testSetSize = 10000000;
 			var generator = new PeriodicWordLineGenerator();
-			var lines = generator.GetLines(100).ToArray();
+			PeriodicPair[] pairs = new PeriodicPair[2]
+			{
+				new PeriodicPair(3, "Ricky"),
+				new PeriodicPair(5, "Bobby")
+			};
+			var lines = generator.GetLines(testSetSize, pairs).ToArray();
 
-			for (int i = 14; i < 100; i+=15)
+			for (int i = 14; i < testSetSize; i += 15)
 			{
 				Assert.IsTrue(lines[i] == "RickyBobby");
 			}
-			for (int i = 2; i < 100; i += 3)
+			for (int i = 2; i < testSetSize; i += 3)
 			{
 				Assert.IsTrue(lines[i].Contains("Ricky"));
 			}
-			for (int i = 4; i < 100; i += 5)
+			for (int i = 4; i < testSetSize; i += 5)
 			{
 				Assert.IsTrue(lines[i].Contains("Bobby"));
 			}
-
 		}
 
 	}

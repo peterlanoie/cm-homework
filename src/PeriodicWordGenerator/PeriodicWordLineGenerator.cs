@@ -1,9 +1,11 @@
-﻿namespace PeriodWordGenerator
+﻿using PeriodicWordGenerator;
+
+namespace PeriodWordGenerator
 {
 	public class PeriodicWordLineGenerator
 	{
 
-		public IEnumerable<string> GetLines(Int32 upperBound)
+		public IEnumerable<string> GetLines(Int32 upperBound, params PeriodicPair[] periodicPairs)
 		{
 			string result;
 			bool skip;
@@ -13,15 +15,13 @@
 				testVal = i + 1;
 				result = "";
 				skip = false;
-				if (testVal % 3 == 0)
+				foreach (var pair in periodicPairs)
 				{
-					result += "Ricky";
-					skip = true;
-				}
-				if (testVal % 5 == 0)
-				{
-					result += "Bobby";
-					skip = true;
+					if (testVal % pair.RepeatsAt == 0)
+					{
+						result += pair.Word;
+						skip = true;
+					}
 				}
 				if (!skip)
 				{
