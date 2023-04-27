@@ -39,12 +39,13 @@ function MakePackage{
 	& dotnet pack $path_library_project --nologo --no-restore --no-build --configuration $buildConfig --output $path_build_dir --verbosity $verbosity
 }
 
-function DevBuild{
-	Write-Host "Running Dev Build"
+function PrivateBuild{
+	Write-Host "Running Private Build"
 	Clean
 	Prepare
 	Compile
 	RunTests
+	MakePackage
 }
 
 function CIBuild{
