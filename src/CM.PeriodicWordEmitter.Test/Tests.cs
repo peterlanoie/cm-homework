@@ -6,29 +6,23 @@ namespace CM.PeriodicWordEmitter.Test
 	[TestClass]
 	public class Tests
 	{
-		private static Tuple<int, string>[] BASE_TEST_SET;
-
-		[ClassInitialize]
-		public static void Setup(TestContext context)
-		{
-			BASE_TEST_SET = new Tuple<int, string>[]{
-				new Tuple<int, string>(1, "1"),
-				new Tuple<int, string>(2, "2"),
-				new Tuple<int, string>(3, "Threes"),
-				new Tuple<int, string>(4, "4"),
-				new Tuple<int, string>(5, "Fives"),
-				new Tuple<int, string>(6, "Threes"),
-				new Tuple<int, string>(7, "7"),
-				new Tuple<int, string>(8, "8"),
-				new Tuple<int, string>(9, "Threes"),
-				new Tuple<int, string>(10, "Fives"),
-				new Tuple<int, string>(11, "11"),
-				new Tuple<int, string>(12, "Threes"),
-				new Tuple<int, string>(13, "13"),
-				new Tuple<int, string>(14, "14"),
-				new Tuple<int, string>(15, "ThreesFives"),
-			};
-		}
+		private static Tuple<int, string>[] BASE_TEST_SET = new Tuple<int, string>[]{
+			new Tuple<int, string>(1, "1"),
+			new Tuple<int, string>(2, "2"),
+			new Tuple<int, string>(3, "Threes"),
+			new Tuple<int, string>(4, "4"),
+			new Tuple<int, string>(5, "Fives"),
+			new Tuple<int, string>(6, "Threes"),
+			new Tuple<int, string>(7, "7"),
+			new Tuple<int, string>(8, "8"),
+			new Tuple<int, string>(9, "Threes"),
+			new Tuple<int, string>(10, "Fives"),
+			new Tuple<int, string>(11, "11"),
+			new Tuple<int, string>(12, "Threes"),
+			new Tuple<int, string>(13, "13"),
+			new Tuple<int, string>(14, "14"),
+			new Tuple<int, string>(15, "ThreesFives"),
+		};
 
 		[TestMethod]
 		public void CreatedPatternRule()
