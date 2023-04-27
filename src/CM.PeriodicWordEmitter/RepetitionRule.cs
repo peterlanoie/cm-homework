@@ -28,7 +28,7 @@ namespace CM.PeriodicWordEmitter
 		public string Word { get; set; }
 
 		/// <summary>
-		/// The repetition factor. "Repeat ever X lines."
+		/// The repetition factor. "Repeat every X lines."
 		/// </summary>
 		public int RepeatsAt { get; set; }
 	}
