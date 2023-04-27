@@ -34,6 +34,20 @@ Foo
 FooBar
 ```
 
+## Usage
+
+Here's a sample usage based on the above example:
+```
+var generator = new PeriodicWordEmitter();
+var rules = new RepetitionRule[]
+{
+	new RepetitionRule(3, "Foo"),
+	new RepetitionRule(5, "Bar")
+};
+var results = generator.GetLines(15, rules);
+// ... do something with `results`
+```
+
 # Development Notes
 
 ## Further Questions
