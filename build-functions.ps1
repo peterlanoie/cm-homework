@@ -20,7 +20,7 @@ function Clean {
 }
 
 function Prepare {
-	& dotnet restore $path_source_dir\$solutionName.sln --nologo --configuration $buildConfig --interactive --verbosity $verbosity
+	& dotnet restore $path_source_dir\$solutionName.sln --nologo --interactive --verbosity $verbosity
 }
 
 function Compile {
