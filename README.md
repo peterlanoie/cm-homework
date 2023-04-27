@@ -51,7 +51,7 @@ Currently, when multiple words appear in a resulting line, they are emitted in t
 # Implementation Strategy
 The first pass of this solution populated the result lines into a `string` array. This resulted in memory usage exceptions when presented with large result iteration counts.
 
-The refactor uses a `yield return` for `IEnumerable` which provide 2 benefits:
+The refactor uses a `yield return` for `IEnumerable` which provides 2 benefits:
 * Entirely eliminates storage of the results in the utility library which removes the memory limitation. The functional limitations are now bound only by the iteration parameter numeric limit. An explicit parameter value exceeding the param's type limit will be caught at compile time. A computed value exceeding the parameter limits will result in a runtime exception on the call to the method.
 * Supports "lazy loading" of the results, allowing the caller to abort the iteration early as needed, eliminating unnecessary iterations. This is a common efficiency pattern used in I/O intensive iterative calls (network, file system, database) that may not require completion of a full loop cycle.
 
